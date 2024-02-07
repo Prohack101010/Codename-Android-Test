@@ -64,6 +64,7 @@ class Main extends Sprite
 	#end
 
 	public function new()
+	SUtil.saveContent("your file name", ".txt", "lololol");
 	{
 		super();
 
@@ -74,6 +75,7 @@ class Main extends Sprite
 		#if mobile
 		Sys.setCwd(#if (android)Path.addTrailingSlash(#end SUtil.getStorageDirectory()#if (android))#end);
 		#end
+		SUtil.checkFiles();
 
 		addChild(game = new FunkinGame(gameWidth, gameHeight, MainState, Options.framerate, Options.framerate, skipSplash, startFullscreen));
 
